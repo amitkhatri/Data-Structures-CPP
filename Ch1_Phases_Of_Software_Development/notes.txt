@@ -1,0 +1,61 @@
+The Phases of Software Development
+* Specification of the task
+* Design of a solution
+* Implementation (coding) of the solution
+* Testing and debugging
+* Maintenance and evolution of the system
+* Obsolescence
+
+
+Procedural Abstraction: You don't care about HOW the function is written. We just want to use it.
+
+Preconditions & Postconditions
+    * A precondition is a statement giving the condition that is required
+      to be true when a function is called. The function is guaranteed to 
+      perform as it should unless the precondition is true
+
+    * A post condition is a statement describing what will be true when 
+      a function call is completed. If the function is correct and the 
+      precondition was true when the function was called, then the function
+      will complete , and the postcondition will be true when the call is
+      completed
+
+
+Example:
+double celsius_to_fahrenheit(double c);
+//Precondition: c is a Celsius temperature no less than abs 0 (-273.15)
+//Postcondition: The reutrn value is the temperature c converted to F
+
+Function prototype: Consists of the return type, name, params, followed by a semicolon
+double celsius_to_fahrenheit(double c);
+
+#include <iostream> gives the program access to C++ I/O facilities
+using namespace std; (the standard namespace directive)
+
+Use Declared Constants
+    * const double TABLE_BEGIN = -50.00
+    * Constants are values that will never change while the prog. is running
+    * Common programming style is to use all capital letters for any declared constant
+    * If the program needs to be altered, we can just change the value of the constant
+
+Using Assert to check a precondition
+    * The assert facility is a good way to detect invalid data at an early point
+    * #include <cassert>
+    * The argument for an assertion is usually a true/false statement
+    * assert(c >= MINIMUM_CELSIUS) //Check to see if c is valid
+    * put #define NDEBUG before all include directives to turn off assertions
+
+Running time analysis
+    * Does the algorithm work fast enough for my needs
+    * How much longer does the method take when the input gets larger?
+    * Which of several differente methods is fastest?
+
+Instead of measuring actual elapsed time, we count the number of operations
+O(n) - Linear
+O(n^2) - Quadratic
+O(logn) - Logarithmic
+
+Debugging Tips
+    * Never change suspicious code and "hope" it might work
+    * Figure out exactly why a test case isnt working
+    * Once error corrected, test cases should be re-run

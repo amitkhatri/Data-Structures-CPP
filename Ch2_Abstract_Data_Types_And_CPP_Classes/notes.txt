@@ -1,0 +1,72 @@
+Classes and Members
+    * A class is a new kind of data type
+    * Each class is a collection of data
+    * Member functions are incorporated into the class def and used to manip the class
+
+The throttle class 
+    1. A function to set a throttle to its shutoff position
+    2. A function to shift a throttle's position by a given amount
+    3. A function that returns the fuel flow, expressed as a portion of max flow
+    4. A function that tells us whether the throttle is currently on
+
+
+class throttle
+{
+public:
+    // MODIFICATION MEMBER FUNCTIONS
+    void shut_off();
+    void shift(int amount);
+    //CONSTANT MEMBER FUNCTIONS
+    double flow() const;
+    bool is_on() const;
+private:
+    int position;
+};
+
+The class head
+    * The head of the difinition consists of the C++ keyword "class"
+    * Followed by the name of the new class
+    * Normally use nouns for the name of a class
+
+The member list
+    * The rest of the definition, between the brackets is the member list of the definition
+
+The public section
+    * These items are available to anyone who uses the new datatype
+    * These are the member functions OR methods
+    * When a member function is listed in a class body, we list only the functions prototype
+
+Modification member functions
+    * Change the values in an object
+
+Constant member functions
+    * Examine the status of an object, but changing the object is forbidden
+
+
+Clarifying the const keyword
+    * Unlike const vars, in this case, const is put after the param list
+      to indicate the function is a constant member function. It can examine
+      the status of its object but cannot change the object.
+
+The private section
+    * Items that are part of the class but not directly available to those who use the class
+    * The programmer who implements the throttle class can access private. but the prog who uses the class cannot
+
+A common pattern for classes
+    * Public member functions permit programmers to modify and examine objects
+    * Private member variables store the information about the status of an object of the class
+
+Using a class 
+* Examples: throttle my_throttle;   throttle control;
+
+Implementing member functions
+    * When implementing. The class name must come before the function name
+    * ex: void throttle::shut_off() the "::" is called the scope resolution operator. Tells compiler the function is a member of a particular class
+
+void throttle::shut_off(){
+//Precondition: None
+//Postcondition: The throttle has been turned off
+    position = 0;
+}
+
+
