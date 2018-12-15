@@ -8,6 +8,6 @@ int main(void){
 	myBag.insert(3);
 	myBag.insert(6);
 	myBag.insert(10);
-	myBag.printBag();
+	cout<<myBag;
 	return 0;
 }

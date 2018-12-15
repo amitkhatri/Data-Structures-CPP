@@ -42,6 +42,7 @@
 #ifndef BAG_H
 #define BAG_H
 #include <cstdlib>
+#include <iostream>
 class Bag{
 	public:
 		typedef int value_type;
@@ -62,4 +63,5 @@ class Bag{
 };
 
 Bag operator +(const Bag& b1, const Bag& b2);
+std::ostream& operator <<(std::ostream& outs, const Bag& source);
 #endif

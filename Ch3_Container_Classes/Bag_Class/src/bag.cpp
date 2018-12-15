@@ -49,6 +49,13 @@ using namespace std;
 	Bag operator +(const Bag& b1, const Bag& b2){
 	}
 
+	//This is obviously really dumb. Should make this a friend
+	//function that has access to the private members? Getting
+	//fpermissive error/warning
+	std::ostream& operator <<(std::ostream& outs, const Bag& source){
+		source.printBag();
+	}
+
 	Bag::size_type Bag::size() const{
 		return used;
 	}
